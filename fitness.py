@@ -35,6 +35,11 @@ def fitness(arr,k):
         copy.sort()
         if operations != copy:
             fouls+=1
+    if ((tiempos1[l][0]>tiempos1[j][0] and tiempos1[l][0]<tiempos1[j][1]) 
+              or (tiempos1[l][0]>tiempos1[j][0] and tiempos1[l][1]<tiempos1[j][1]) 
+              or (tiempos1[l][0]<tiempos1[j][0] and tiempos1[l][0]<tiempos1[j][1] and tiempos[i][1]>tiempos[j][0])
+              or (tiempos1[l]==tiempos1[j])):
+        
 
     ##for tupl in times:
 

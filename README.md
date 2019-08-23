@@ -1,5 +1,6 @@
 # Genetic-Algorithm-IA
 Algoritmo genetico para la solucion de un problema de inteligencia artificial en python
+Solucion del trabajo en google docs https://docs.google.com/document/d/199IWLlHzQigS5GUXHkoDg_qKBvtyNHEcdm0O4L-whOw/edit?usp=sharing
 
 ##Para la solucion del siguiente problema
 
