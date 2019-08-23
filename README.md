@@ -1,19 +1,19 @@
 # Genetic-Algorithm-IA
 Algoritmo genetico para la solucion de un problema de inteligencia artificial en python
 
-Para la solucion del siguiente problema
+##Para la solucion del siguiente problema
 
-Asignatura Sistemas Inteligentes
-Representaci´on Mediante Grafos de Estados y
-T´ecnica de B´usqueda
-Agosto 14 de 2019
+###Asignatura Sistemas Inteligentes
+###Representaci´on Mediante Grafos de Estados y
+###T´ecnica de B´usqueda
+###Agosto 14 de 2019
 Este taller corresponde al 20% de la nota de la asignatura, se debe realizar de
 forma individual. El archivo con la soluci´on del taller deber´a enviarse a la profesora por correo electr´onico a m´as tardar el jueves 22 de agosto, la sustentaci´on
 ser´a el viernes 23 de agosto. El objetivo del taller es practicar:
 • El dise˜no de agentes computacionales inteligentes
 • La aplicaci´on de t´ecnicas de b´usqueda para controlar un agente inteligente
 • La implementaci´on de algoritmos gen´eticos
-1 Definici´on del problema
+##1 Definici´on del problema
 En una empresa de manufactura, han decido confiar a un agente inteligente la
 programaci´on de la producci´on. Despu´es de analizar la naturaleza del proceso
 productivo, se ha llegado a la siguiente definici´on del problema de optimizaci´on,
@@ -34,7 +34,7 @@ definir el trabajo. Todos los trabajos y m´aquinas est´an disponibles en el ti
 cero. El problema consiste en asignar cada operaci´on a una m´aquina elegible, y
 secuenciar las operaciones en las m´aquinas de manera que se minimice el tiempo
 Cmax, requerido para terminar todos los trabajos.
-2 Actividades a realizar
+##2 Actividades a realizar
 1. Caracterizar el agente computacional inteligente que va a resolver el problema.
 2. Dibujar un esquema de la arquitectura del agente, la cual debe ser jer´arquica.
 3. Especificar el flujo de datos entre capas y especificar m´odulos dentro de
@@ -49,7 +49,7 @@ n´umero de generaciones, probabilidad de mutaci´on. Para la estrategia de
 cruce deber´an compararse el m´etodo de torneo y el de ruleta.
 6. Implementar la soluci´on en un jupyter notebook, en python.
 7. Analizar la calidad de las soluci´on obtenida por el algoritmo gen´etico.
-3 Criterios de evaluaci´on
+##3 Criterios de evaluaci´on
 El informe del taller, que se debe incorporar en el mismo archivo de jupyter
 notebook que el c´odigo, deber´a contener una corta introducci´on, los seis items
 enumerados en la secci´on anterior, que corresponden a las actividades del taller,
