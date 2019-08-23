@@ -21,8 +21,6 @@ def fitness(arr,k):
                 if (maxTime==1): score=100
                 else: score = 50+((100/maxTime))
                 if (maxTime==2): score=99  
-               
-    
     return score
     operations=[]
     times=[]
@@ -35,22 +33,7 @@ def fitness(arr,k):
         copy.sort()
         if operations != copy:
             fouls+=1
-    if ((tiempos1[l][0]>tiempos1[j][0] and tiempos1[l][0]<tiempos1[j][1]) 
-              or (tiempos1[l][0]>tiempos1[j][0] and tiempos1[l][1]<tiempos1[j][1]) 
-              or (tiempos1[l][0]<tiempos1[j][0] and tiempos1[l][0]<tiempos1[j][1] and tiempos[i][1]>tiempos[j][0])
-              or (tiempos1[l]==tiempos1[j])):
-        
-
     ##for tupl in times:
-
-
-        
-    
-            
-
-
-    
-
 
 def main():
     ex=[[(1,2,3,4),(2,3,1,3)],[(1,2,3,4),(4,5,6,7),(5,3,1,2)],[(1,5,6,9)]]
