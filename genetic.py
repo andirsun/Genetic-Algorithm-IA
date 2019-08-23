@@ -49,13 +49,16 @@ def genetic(arr):
         ## Tercer  paso : ordenar el arreglo de individos de menor a mayor aptitud y eliminar la mitad menos apta
         arrAptitud.sort(key=lamda x:x[1]) ##ordeno el arreglo por sus aptitudes de menor a mayor
         arrAptitud[len(arrAptitud)/2:] ##dejo solamente la mitad de la generacion de los individuos con mayor aptitud
-        gen0mod=[]
+        newGenMod=[]
         for (ind,apt) in arrAptitud: ##asi saque a los individuos con las aptitudes mas bajas y deje los que me sirven
             temp=gen0.pop(ind)
-            gen0mod.append(temp)
-
+            newGenMod.append(temp)
+    
+    return newGenMod
 
 main():
-    genetic()
+    ## aca debo definir mi arreglo grande con toda mi poblacion
+    solution=[]
+    solution= genetic(arr)
 
 main()
