@@ -1,8 +1,12 @@
 ##genetic function
 import random
-def genetic(arr,numGen,k):
+##Individiuos de l tipo [[(Machine,tiempo),(Machine,time)],[(machine,time)]]
+def gen0():
+
+
+def genetic(numGen,k):
     '''
-    Entradas : El arreglo arr es un conjunto de individups , cada individuo a su vez es un arreglo de arreglos de tuplas de 4 elementos
+    Entradas : 
     Salida : Un arreglo de individuos como conjunto solucion, donde estan los individuos que optimizan en mayor medida la solucion
     '''
     ### Primer paso: elegir la generacion 0 al azar 
@@ -25,9 +29,15 @@ def genetic(arr,numGen,k):
     
     for iteracion in range(0,numGen):
         for indice in range(0,len(gen0mod),2):##para cojer parejas de dos individuos y mutarlas para generar las nuevas generaciones
+            
+            ## Factor de criterio de si voy a mutar dos indivuduos o no 
+            prob  = random.randrange(100)
+            if (prob>95 ): # dado el caso que le de al 5 porciento de probabilidad de mutacion entonces muto si no solo agrego a la nueva generacion
+
             ##agarro mis dos indivudos que voy a mutar
             ind1=gen0mod[indice]
             ind2=gen0mod[indice+1]
+
             ##corto mis individuos para mutarlos 
             cut= random.randrange(10) ##por donde voy a cortar los individuos
             startInd1= ind1[:len(ind1)//cut]
