@@ -1,6 +1,39 @@
 ##genetic function
 import random
 ##Individiuos de l tipo [[(Machine,tiempo),(Machine,time)],[(machine,time)]]
+
+def fitness(arr,k):
+    fouls=0
+    # aca castigo o recompenso por tiempo
+    maxTime=0
+    for task in arr:##Recorro cada trabajo en el arreglo de los trabajos y vero si se pasa del tiempo
+        for op in task:
+            #print(maxTime,k)
+            if op[1]>maxTime:##es para actualizar el maximo en cada operacion
+                maxTime=op[1]
+                #print("el maximo va en",maxTime) 
+            if maxTime > k:##veo en cada iteracion si el tiempo maximo que llevan las operaciones no se ha pasado del tiempo 
+                #print("es mayor")
+                score = 100/(maxTime-k)
+                if maxTime==(k+1): score=50 ##dado el caso que la diferencia de tiempo se pase por 1 sola unidad entonces para que la division no de 100, le quemo el valor de 75, ya que si se pasa de 2 unidades en adelante funciona bien
+                if maxTime==(k+2): score=49
+                return score
+            else:
+                if (maxTime==1): score=100
+                else: score = 50+((100/maxTime))
+                if (maxTime==2): score=99  
+    operations=[]
+    times=[]
+    for task in arr:
+        for op in task:
+            operations.append(op[1])
+            times.append((op[0],op[2],op[3]))
+        print(times)
+        copy = operations[:]
+        copy.sort()
+        if operations != copy:
+            fouls+=1
+    return score
 def gen0(individuos,maquinas,trabajos,operaciones):
     '''
     Entradas : el numero de individos que voy a generar y un numero de maquinas las cuales son las elegibles para armas los individuos con las operaciones 
@@ -39,7 +72,7 @@ def masAptos(gen0,arrAptitud):
     return gen0mod
 
 
-def ruleta(arrAptitud):
+def metodoRandomizacion(arrAptitud):
   sumatoria = 0
   prob=[]
   probAcumulada=[]
@@ -80,13 +113,11 @@ def corteYmutado(ind1,ind2,gen,maquinas,tiempo):
         ##Muto
         if(variableAmutar==1):
             hijoAmutar[0][variableAmutar]= newInd1[0][variableAmutar]+(random.randrange(maquinas))##muto la maquina
-        else:
-            hijoAmutar[0][variableAmutar]= newInd1[0][variableAmutar]+(random.randrange(10))##muto el tiemo
-
     else:
         ##le calculo sus aptitudes a mis nuevos 2 individuos
         gen.append(newInd1)##meto los hijjos de la generacion junto con los padres
         gen.append(newInd2)
+
 
 def genetic(numGen,k,numMaquinas,individuos,trabajo,operaciones,tiempo):
     '''
@@ -101,8 +132,8 @@ def genetic(numGen,k,numMaquinas,individuos,trabajo,operaciones,tiempo):
         ## Tercer  paso : ordenar el arreglo de individos de menor a mayor aptitud y eliminar la mitad menos apta
         gen=masAptos(gen0,arrAptitud)
         ## Cuarto Paso : Realizar el cruce de los individuos 
-        ind1= ruleta(arrAptitud)
-        ind2= ruleta(arrAptitud)
+        ind1= metodoRandomizacion(arrAptitud)##Metodo de la Ruleta
+        ind2= metodoRandomizacion(arrAptitud)
         #agarro mis dos indivudos que voy a cortar
         padre1=gen0mod[ind1]
         padre2=gen0mod[ind2]

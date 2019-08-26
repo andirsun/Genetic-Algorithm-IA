@@ -8,8 +8,8 @@ def fitness(arr,k):
     for task in arr:##Recorro cada trabajo en el arreglo de los trabajos y vero si se pasa del tiempo
         for op in task:
             #print(maxTime,k)
-            if op[3]>maxTime:##es para actualizar el maximo en cada operacion
-                maxTime=op[3]
+            if op[1]>maxTime:##es para actualizar el maximo en cada operacion
+                maxTime=op[1]
                 #print("el maximo va en",maxTime) 
             if maxTime > k:##veo en cada iteracion si el tiempo maximo que llevan las operaciones no se ha pasado del tiempo 
                 #print("es mayor")
@@ -33,10 +33,9 @@ def fitness(arr,k):
         copy.sort()
         if operations != copy:
             fouls+=1
-    ##for tupl in times:
 
 def main():
-    ex=[[(1,2,3,4),(2,3,1,3)],[(1,2,3,4),(4,5,6,7),(5,3,1,2)],[(1,5,6,9)]]
+    ex=[[(1,2),(2,3)],[(1,2),(4,5),(5,3)],[(1,5)]]
     #ex=[[(1,2,0,12)]]    
     ##
     k=10 ##Tiempo que se quiere optimizar 
